@@ -79,8 +79,9 @@ class MinHeap{
 };
 
 int main() {
-	MinHeap h(11);
-	h.push(3);
+/*	
+    MinHeap h(11);
+    h.push(3);
     h.push(2);
     h.pop();
     h.push(15);
@@ -89,5 +90,23 @@ int main() {
     h.pop();
     h.push(45);
     cout << h.top() << " ";  //4
+    */
+    // heap sort
+    // 1)inserts all elements (from an unsorted array) into a heap
+    // 2)removes them from the root of a heap until the heap is empty
+    int n,item; cin>>n;
+    int a[n];
+    MinHeap h(n);
+    for(int i=0;i<n;i++){
+        cin>>item;
+        h.push(item);
+    }
+    for(int i = 0; i<n;i++){
+        a[i]= h.top(); h.pop();
+
+    }
+     for(int i = 0; i<n;i++){
+        cout<<a[i]<<" ";
+    }
 	return 0;
 }
